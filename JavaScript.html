@@ -1,13 +1,15 @@
 <script>
   function uniform(){
-    var min = document.getElementsByName("form1").item(0).value;
-    var max = document.getElementsByName("form2").item(0).value;
+    var min = document.getElementById("form1_min").value;
+    var max = document.getElementById("form2_max").value;
+    document.getElementsByName("result").item(0).value = Math.random()*(max-min)+min;
     return Math.random()*(max-min)+min;
    };
    
-  function uniInt(min=0,max=1){
-    min = Math.ceil(min);
-    max = Math.floor(max);
+  function uniInt(){
+    var min = document.getElementById("form1_min").value;
+    var max = document.getElementById("form2_max").value;
+    document.getElementsByName("result").item(0).value = Math.floor(Math.random()*(max-min)+min);
     return Math.floor(Math.random()*(max-min)+min)
   };
   
