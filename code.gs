@@ -1,5 +1,5 @@
 function doGet() {
-  return HtmlService.createHtmlOutputFromFile('random');
+  return HtmlService.createTemplateFromFile('random').evaluate();
 }
 
 function include(filename) {
