@@ -6,14 +6,25 @@
     
     <body>
       <h1>乱数発生のサイト</h1>
-      最小値 
-      <form name="form1">
-          <input type="text" name="min" value=0 maxlength="5">
-      </form>
-      最大値
-      <form name="form2">
-          <input type="text" name="max" value=1 maxlength="5">
-      </form>
+      <table>
+        <tr>
+          <th>最小値</th>
+          <th>最大値</th>
+        </tr>
+        <tr>
+          <th>
+            <form name="form1">
+              <input type="text" name="min" value=0 maxlength="5">
+            </form>
+          </th>
+          <th>
+            <form name="form2">
+              <input type="text" name="max" value=1 maxlength="5">
+            </form>
+          </th>
+        </tr>
+      </table>
+     
       <table>
         <tr>
           <th><input type="button" value="一様分布" onclick="uniform()"></th>
@@ -22,14 +33,25 @@
         </tr>
       </table>
     
-      平均 
-      <form name="form3">
-	    <input type="text" name="min" value="min" maxlength="5">
-      </form>
-      分散 
-      <form name="form4">
-        <input type="text" name="min" value="max" maxlength="5">
-      </form>
+    <table>
+        <tr>
+          <th>平均</th>
+          <th>分散</th>
+        </tr>
+        <tr>
+          <th>
+            <form name="form3">
+              <input type="text" name="min" value=0 maxlength="5">
+            </form>
+          </th>
+          <th>
+            <form name="form5">
+              <input type="text" name="max" value=1 maxlength="5">
+            </form>
+          </th>
+        </tr>
+      </table>
+      
       <table>
         <tr>
           <th><input type="button" value="正規分布" onclick="uniform()"></th>
