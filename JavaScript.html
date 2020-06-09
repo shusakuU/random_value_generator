@@ -1,0 +1,18 @@
+<script>
+  function uniform(){
+    var min = document.getElementsByName("form1").item(0).value;
+    var max = document.getElementsByName("form2").item(0).value;
+    window.alert('a');
+    return Math.random()*(max-min)+min;
+}
+</script>
+
+<script>
+  function uniInt(min=0,max=1){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random()*(max-min)+min)
+  }
+</script>
+
+
