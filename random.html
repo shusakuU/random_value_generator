@@ -5,7 +5,8 @@
     </head>
     
     <body>
-      <h1>乱数発生のサイト</h1>
+      <h1>乱数生成</h1>
+      <h2> 一様分布 </h2>
       <table>
         <tr>
           <th>最小値</th>
@@ -14,12 +15,12 @@
         <tr>
           <th>
             <form name="form1">
-              <input type="text" id="form1_min" value=0 maxlength="5">
+              <input type="number" id="form1_min" value=0 maxlength="5">
             </form>
           </th>
           <th>
             <form name="form2">
-              <input type="text" id="form2_max" value=1 maxlength="5">
+              <input type="number" id="form2_max" value=1 maxlength="5">
             </form>
           </th>
         </tr>
@@ -29,10 +30,10 @@
         <tr>
           <th><input type="button" value="一様分布" onclick="uniform()"></th>
           <th><input type="button" value="整数" onclick="uniInt()"></th>
-          <th><input type="button" value="整数" onclick="uniInt()"></th>
         </tr>
       </table>
-    
+      <textarea name="result_uniform"></textarea>
+    <h2> 正規分布 </h2>
     <table>
         <tr>
           <th>平均</th>
@@ -41,12 +42,12 @@
         <tr>
           <th>
             <form name="form3">
-              <input type="text" name="min" value=0 maxlength="5">
+              <input type="number" id="gaussian_mean" value=0 maxlength="5">
             </form>
           </th>
           <th>
             <form name="form5">
-              <input type="text" name="max" value=1 maxlength="5">
+              <input type="number" id="gaussian_sigma" value=1 maxlength="5">
             </form>
           </th>
         </tr>
@@ -54,10 +55,53 @@
       
       <table>
         <tr>
-          <th><input type="button" value="正規分布" onclick="uniform()"></th>
+          <th><input type="button" value="正規分布" onclick="gaussian()"></th>
         </tr>
       </table>
-      <textarea name="result"></textarea>
+      <textarea name="result_gaussian"></textarea>
+      
+      <h2> 指数分布 </h2>
+    <table>
+        <tr>
+          <th>平均</th>
+        </tr>
+        <tr>
+          <th>
+            <form name="form4">
+              <input type="number" id="exponential_mean" value=0 maxlength="5">
+            </form>
+          </th>
+        </tr>
+      </table>
+      
+      <table>
+        <tr>
+          <th><input type="button" value="指数分布" onclick="exponential()"></th>
+        </tr>
+      </table>
+      <textarea name="result_exponential"></textarea>
+      
+      <h2> Poisson分布 </h2>
+    <table>
+        <tr>
+          <th>平均</th>
+        </tr>
+        <tr>
+          <th>
+            <form name="form4">
+              <input type="number" id="poisson_mean" value=0 maxlength="5">
+            </form>
+          </th>
+        </tr>
+      </table>
+      
+      <table>
+        <tr>
+          <th><input type="button" value="Poisson分布" onclick="poisson()"></th>
+        </tr>
+      </table>
+      <textarea name="result_poisson"></textarea>
+      
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <?!= include('JavaScript'); ?>
     </body>

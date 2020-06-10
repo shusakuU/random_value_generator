@@ -1,19 +1,52 @@
 <script>
   function uniform(){
-    var min = document.getElementById("form1_min").value;
-    var max = document.getElementById("form2_max").value;
-    document.getElementsByName("result").item(0).value = Math.random()*(max-min)+min;
-    return Math.random()*(max-min)+min;
+    let min = parseFloat(document.getElementById("form1_min").value);
+    let max = parseFloat(document.getElementById("form2_max").value);
+    if(min > max){
+      let v = min; min = max; max = v;
+    }
+    document.getElementsByName("result_uniform").item(0).value = Math.random()*(max-min)+min;
    };
    
   function uniInt(){
-    var min = document.getElementById("form1_min").value;
-    var max = document.getElementById("form2_max").value;
-    document.getElementsByName("result").item(0).value = Math.floor(Math.random()*(max-min)+min);
-    return Math.floor(Math.random()*(max-min)+min)
+    let min = parseInt(document.getElementById("form1_min").value);
+    let max = parseInt(document.getElementById("form2_max").value)+1;
+    if(min >= max){
+      let v = min; min = max-1; max = v+1;
+    }
+    document.getElementsByName("result_uniform").item(0).value = Math.floor(Math.random()*(max-min)+min);
   };
   
+  // Box Muller法を使いたい
+  function gaussian(){
+    let mean = parseFloat(document.getElementById("gaussian_mean").value,10);
+    let sigma = document.getElementById("gaussian_sigma").value;
+    let u1 = Math.random();
+    let u2 = Math.random();
+    let x = Math.sqrt(-2*sigma*Math.log(u1))*Math.sin(2*Math.PI*u2) + mean
+    document.getElementsByName("result_gaussian").item(0).value = x;
+  };
   
+  function exponential(){
+    let mean = parseFloat(document.getElementById("exponential_mean").value,10);
+    let x = -mean*Math.log(Math.random());
+    document.getElementsByName("result_exponential").item(0).value = x;
+  };
+
+  function poisson(){
+    let mean = parseFloat(document.getElementById("poisson_mean").value,10);
+    let u = Math.random();
+    let cnt = 0;
+    let prob = Math.pow(Math.E, -mean)
+    let cum_sum = prob;
+    while(cum_sum<1){
+      if(u <=cum_sum){break;}
+      prob = prob*mean/(cnt+1.0);
+      cum_sum += prob;
+      cnt++ ;
+      }
+    document.getElementsByName("result_poisson").item(0).value = cnt;
+  };
 </script>
 
 
